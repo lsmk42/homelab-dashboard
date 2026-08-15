@@ -1,0 +1,64 @@
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-card {
+  background-color: var(--dark-card, #242d3f);
+  border: 1px solid var(--border-color, #3a3f4f);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skeleton-line {
+  height: 16px;
+  background: linear-gradient(
+    90deg,
+    var(--dark-surface, #1a1f2e) 0%,
+    var(--dark-card, #242d3f) 50%,
+    var(--dark-surface, #1a1f2e) 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  animation: shimmer 2s infinite;
+}
+
+.skeleton-line.skeleton-title {
+  height: 24px;
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.skeleton-line.skeleton-text {
+  height: 14px;
+  width: 100%;
+}
+
+.skeleton-line.skeleton-text.short {
+  width: 60%;
+}
+
+.skeleton-line:last-child {
+  margin-bottom: 0;
+}
+
+.skeleton-gauge {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(
+    90deg,
+    var(--dark-surface, #1a1f2e) 0%,
+    var(--dark-card, #242d3f) 50%,
+    var(--dark-surface, #1a1f2e) 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 50%;
+  animation: shimmer 2s infinite;
+  margin: 0 auto;
+}

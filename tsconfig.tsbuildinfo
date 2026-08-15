@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/dashboard.tsx","./src/components/dockercontainers.tsx","./src/components/serverstatus.tsx","./src/components/skeleton.tsx","./src/components/systemstats.tsx","./src/pages/containerspage.tsx","./src/pages/serverspage.tsx","./src/pages/settingspage.tsx","./src/pages/storagepage.tsx"],"version":"5.9.3"}
