@@ -1,6 +1,7 @@
 import os
 import json
 import psutil
+import shutil
 import subprocess
 from datetime import datetime
 from flask import Flask, jsonify
@@ -59,7 +60,11 @@ def get_system_stats():
 def get_docker_containers():
     """Get Docker container information"""
     try:
-        result = subprocess.run(['docker', 'ps', '-a', '--format', '{{json .}}'],
+        docker_executable = shutil.which('docker') or os.path.join(
+            os.environ.get('LOCALAPPDATA', ''),
+            'Programs', 'DockerDesktop', 'resources', 'bin', 'docker.exe'
+        )
+        result = subprocess.run([docker_executable, 'ps', '-a', '--format', '{{json .}}'],
                               capture_output=True, text=True, timeout=5)
 
         containers = []
